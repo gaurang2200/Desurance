@@ -3,7 +3,7 @@ import React from "react";
 import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
 import StepBg from "../images/stepsbg.svg";
 
-function StepsCard({ id, alignment, cardTitle, buttonText }) {
+function StepsCard({ id, alignment, cardTitle, buttonText, buttonClick }) {
   return (
     <Box sx={{ width: '100%', display: 'flex'}} justifyContent={alignment}>
     <Box
@@ -51,7 +51,7 @@ function StepsCard({ id, alignment, cardTitle, buttonText }) {
          a type specimen book. It has survived not only five centuries, but also 
          the leap into electronic typesetting, remaining essentially unchanged.
         </Typography>
-        <Button variant="text" sx={{ width:"fit-content", borderRadius: '5px'}}>
+        <Button onClick={buttonClick} variant="text" sx={{ width:"fit-content", borderRadius: '5px'}}>
             {buttonText} <ArrowRightAltRoundedIcon />
         </Button>
       </Box>

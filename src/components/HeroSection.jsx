@@ -4,7 +4,7 @@ import heroImage from "../images/img1.svg";
 import heroBg from "../images/bg1.svg";
 import gradientBg from "../images/gradientBg.svg";
 
-const HeroSection = () => {
+const HeroSection = ({ scroll }) => {
   return (
     <React.Fragment>
       <Box
@@ -63,7 +63,7 @@ const HeroSection = () => {
             wallet address provided by you by transferring them in case of some
             mishappenings.
           </Typography>
-          <Button disableRipple className="btn" sx={{ p: "0.8em 3em" }}>
+          <Button onClick={scroll} disableRipple className="btn" sx={{ p: "0.8em 3em" }}>
             <Typography variant="button" fontWeight={700}>
               Get Started
             </Typography>

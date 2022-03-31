@@ -22,7 +22,6 @@ function MembershipCard({
           p: 4,
           mx: 4,
           alignItems: "center",
-          width: "20%",
           height: "30em",
           backgroundColor: "#23252B",
           transform: (type === "Premium"? "scale(1.1)": "scale(1)"),
@@ -36,21 +35,11 @@ function MembershipCard({
 
         }}
       >
-        <Typography variant="h4" fontWeight={600}>
-          {type}
-        </Typography>
-        <Typography variant="subtitle1" color="#999" sx={{ my: 2 }}>
-          {features}
-        </Typography>
-        <Typography variant="h3" fontWeight={400} sx={{ my: 1 }}>
-          {price}
-        </Typography>
-        <Typography variant="subtitle1" color="#999">
-          /per {time}
-        </Typography>
-        <Typography variant="subtitle1" color="#999">
-            Payment in MATIC
-        </Typography>
+        <Typography variant="h4" fontWeight={600}>{type}</Typography>
+        <Typography variant="subtitle1" color="#999" sx={{ my: 2 }}>{features}</Typography>
+        <Typography variant="h3" fontWeight={400} sx={{ my: 1 }}>{price}</Typography>
+        <Typography variant="subtitle1" color="#999">/per {time}</Typography>
+        <Typography variant="subtitle1" color="#999">Payment in MATIC only</Typography>
 
         <Typography
           variant="body1"
