@@ -10,6 +10,7 @@ function MembershipCard({
   access,
   customer,
   funds,
+  handleClickOpen
 }) {
   return (
     <React.Fragment>
@@ -24,20 +25,20 @@ function MembershipCard({
           alignItems: "center",
           height: "30em",
           backgroundColor: "#23252B",
-          transform: (type === "Premium"? "scale(1.1)": "scale(1)"),
+          transform: (type === "Premium"? "scale(1.1)": ""),
           position: 'relative',
-          zIndex: 10,
+          zIndex: 20,
           transition: 'transform 0.1s ease-in-out',
 
             "&:hover":{
-                transform: (type === "Premium"? "scale(1.15)": "scale(1.05)")
+                transform: (type == "Premium"? "scale(1.15)": "scale(1.05)")
             }
 
         }}
       >
         <Typography variant="h4" fontWeight={600}>{type}</Typography>
         <Typography variant="subtitle1" color="#999" sx={{ my: 2 }}>{features}</Typography>
-        <Typography variant="h3" fontWeight={400} sx={{ my: 1 }}>{price}</Typography>
+        <Typography variant="h3" fontWeight={400} sx={{ my: 1 }}>${price}</Typography>
         <Typography variant="subtitle1" color="#999">/per {time}</Typography>
         <Typography variant="subtitle1" color="#999">Payment in MATIC only</Typography>
 
@@ -103,6 +104,8 @@ function MembershipCard({
 
         <Button
           className="btn"
+          onClick={() => handleClickOpen(price)}
+          disableRipple
           sx={{
             py: 1,
             px: 2,

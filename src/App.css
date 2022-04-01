@@ -46,3 +46,7 @@
   color: #fff;
   -webkit-text-fill-color: #fff;
 }
+
+.Blur {
+  backdrop-filter: blur(5px);
+}
