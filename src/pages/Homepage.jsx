@@ -8,6 +8,7 @@ import { AppContext } from "../contexts/AppContext";
 import { ethers } from "ethers";
 import Loader from "../components/Loader";
 import { tokenData } from "../utils/tokenData";
+import SuccessImage from "../components/SuccessImage";
 
 const HomePage = () => {
     let onlyAddress = [];
@@ -15,6 +16,7 @@ const HomePage = () => {
   const [nomineeAddress, setNomineeAddress] = React.useState("");
 
   const [formOpen, setFormOpen] = React.useState(false);
+  const [showImage, setShowImage] = React.useState(false);
 
   const [tokens, setTokens] = React.useState([]);
   const [left, setLeft] = React.useState(tokenData);
@@ -65,15 +67,9 @@ const HomePage = () => {
         let txn = await contract.addNominee(nomineeAddress);
         await txn.wait();
 
-        filterTokenData();
-        txn = await contract.approveOperator(onlyAddress, { gasLimit: ethers.utils.hexlify(1000000) });
-        await txn.wait();
-
-        const index = await contract.usersIndex(userAddress);
-        txn = await contract.users(index);
-        console.log(txn);
-
         alert("Nominee Successfully Added");
+
+        setShowImage(true);
     } catch(err){
         console.log(err);
     }
@@ -99,6 +95,10 @@ const HomePage = () => {
     // Register User
     await registerUser(options);
 
+  };
+
+  const handleImageClose = async () => {
+    setShowImage(false);
   };
 
   const handleClose = async () => {
@@ -127,6 +127,7 @@ const HomePage = () => {
 
   return (
     <React.Fragment>
+      <SuccessImage showImage={showImage} handleImageClose={handleImageClose} />
       <Loader isLoading={isLoading} />
       <HeroSection scroll={executeStepsScroll} />
       <Steps stepsRef={stepsRef} scroll={executeMemberScroll} />

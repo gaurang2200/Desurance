@@ -4,7 +4,7 @@ import React from "react";
 const Loader = ({ isLoading }) => {
     return (
         <Backdrop
-            sx={{ color: '#fff', postion:'absolute', zIndex: 40 }}
+            sx={{ color: '#fff', postion:'absolute', zIndex: 30 }}
             open={isLoading}
         >
             <CircularProgress color="inherit" />
