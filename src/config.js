@@ -1,0 +1,2 @@
+const CONTRACT_ADDRESS="0x18b2ad9e87d88f827b13e9c31de9d82ffb1e9407";
+export default CONTRACT_ADDRESS;

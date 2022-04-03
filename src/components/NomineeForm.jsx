@@ -1,10 +1,12 @@
-import { Dialog, DialogTitle, DialogContent, DialogContentText, TextField, Button, DialogActions, InputLabel } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, Button, DialogActions, InputLabel } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import gradientBg from '../images/gradientBg.svg'
 import BootstrapInput from "./BootstrapInput";
+import TransferList from "./TransferList";
 
-const NomineeForm = ({ open, handleClose, cost }) => {
+const NomineeForm = ({ open, handleClose, handleSubmit, cost, tokens, setTokens, nomineeAddress, handleChange, left, setLeft }) => {
+
     return (
         <Dialog open={open} onClose={handleClose} className="Blur"
             PaperProps={{
@@ -43,9 +45,12 @@ const NomineeForm = ({ open, handleClose, cost }) => {
                         Nominee Name
                     </InputLabel>
                     <BootstrapInput
+                        name="name"
+                        required
                         id="n-address"
                         fullWidth
                         placeholder="Enter Name of the Nominee"
+                        // value={nomineeName}
                     />
 
 
@@ -53,14 +58,23 @@ const NomineeForm = ({ open, handleClose, cost }) => {
                         Nominee Address
                     </InputLabel>
                     <BootstrapInput
+                        name="address"
                         id="n-Address"
+                        required
                         fullWidth
                         placeholder="Enter the Wallet Address of the Nominee"
+                        value={nomineeAddress}
+                        onChange={handleChange}
                     />
                 </Box>
+                <TransferList left={left} setLeft={setLeft} right={tokens} setRight={setTokens} />
             </DialogContent>
             <DialogActions>
-                <Button disableRipple className="btn" sx={{ width:'10em', fontSize:'larger', py:1, my: 2 }} fullWidth onClick={handleClose}>Submit</Button>
+                <Button disableRipple className="btn" 
+                    sx={{ width:'10em', fontSize:'larger', py:1 }} 
+                    fullWidth 
+                    onClick={handleSubmit}
+                >Submit</Button>
             </DialogActions>
         </Dialog>
     );

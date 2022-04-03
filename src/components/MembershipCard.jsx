@@ -31,7 +31,7 @@ function MembershipCard({
           transition: 'transform 0.1s ease-in-out',
 
             "&:hover":{
-                transform: (type == "Premium"? "scale(1.15)": "scale(1.05)")
+                transform: (type === "Premium"? "scale(1.15)": "scale(1.05)")
             }
 
         }}
@@ -40,7 +40,7 @@ function MembershipCard({
         <Typography variant="subtitle1" color="#999" sx={{ my: 2 }}>{features}</Typography>
         <Typography variant="h3" fontWeight={400} sx={{ my: 1 }}>${price}</Typography>
         <Typography variant="subtitle1" color="#999">/per {time}</Typography>
-        <Typography variant="subtitle1" color="#999">Payment in MATIC only</Typography>
+        <Typography variant="subtitle1" color="#999">Payment in ETH only</Typography>
 
         <Typography
           variant="body1"
