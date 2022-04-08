@@ -32,7 +32,7 @@ https://desurance.vercel.app/
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/14MTqegvXENzgxm9EUQY-7jpYIoHyQSya/view?usp=sharing)
+![App Screenshot](https://drive.google.com/file/d/14MTqegvXENzgxm9EUQY-7jpYIoHyQSya/view)
 
 
-![Logo](https://drive.google.com/file/d/1EZTtNpPkaXPjamm5fJ7GyY6B-ryeqTvx/view?usp=sharing)
+![Logo](https://drive.google.com/file/d/1EZTtNpPkaXPjamm5fJ7GyY6B-ryeqTvx/view)
